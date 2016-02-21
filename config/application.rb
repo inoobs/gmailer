@@ -2,9 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require "rails"
 # Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
-require "active_record/railtie"
+# require "active_model/railtie"
+# require "active_job/railtie"
+# require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
@@ -26,5 +26,6 @@ module Gmailer
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
   end
 end

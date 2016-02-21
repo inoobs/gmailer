@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
   get '/enable', to: 'gmailer#enable'
+  post '/get_data', to: 'gmailer#fetch_mails'
 end
